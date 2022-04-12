@@ -1,12 +1,7 @@
 const { Pool } = require('pg');
+const conf = require('./config.js')
 
-const pool = new Pool({
-    host: "localhost",
-    port: 5432,
-    user: "myuser",
-    password: "mypass",
-    database: "db",
-})
+const pool = new Pool(conf);
 
 
 pool.on("connect", () => {
